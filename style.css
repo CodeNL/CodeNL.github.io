@@ -1,0 +1,300 @@
+@import url(https://fonts.googleapis.com/css?family=ABeeZee:400);
+
+:root {
+  --primary-background: #eeeeee;
+  --primary-highlight: #dddddd;
+  --primary-foreground: black;
+  --secondary-background: white;
+  --footer-background: #676767;
+  --page-width: 1080px;
+}
+
+/* Base styles */
+html {
+  height: 100%;
+}
+
+body {
+  font-family: 'ABeeZee';
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  align-items: center;
+  background-color: var(--primary-background);
+  line-height: 1.2em;
+}
+
+h1 {
+  font-size: 2em;
+  line-height: 1.2em;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 1.5em;
+  line-height: 1.2em;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 1.17em;
+  line-height: 1.2em;
+  font-weight: bold;
+}
+
+h4 {
+  font-size: 1.12em;
+  line-height: 1.2em;
+  font-weight: bold;
+}
+
+h5 {
+  font-size: .83em;
+  line-height: 1.2em;
+  font-weight: bold;
+}
+
+h6 {
+  font-size: .75em;
+  line-height: 1.2em;
+  font-weight: bold;
+}
+
+/* Page header */
+
+header {
+  min-width: 100%;
+  background-color: var(--secondary-background);
+  flex: 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.codenl-nav__wrapper {
+  margin: 0;
+  max-width: var(--page-width);
+  width: 100%;
+  padding: 0 2%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#codenl-nav__menu-toggle {
+  display: none;
+}
+
+.codenl-nav__logo {
+  max-width: 40%;
+  padding: 20px 0;
+}
+
+.codenl-nav__wrapper nav {
+  width: 60%;
+}
+
+.codenl-nav__wrapper nav ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  font-size: 1.5em;
+}
+
+.codenl-nav__wrapper nav li {
+  flex: 1 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.codenl-nav__wrapper nav li a {
+  display: block;
+  width: 100%;
+  color: var(--primary-foreground);
+  text-decoration: none;
+  transition: background-color .5s ease;
+  padding: 45px 0;
+  border-radius: 5px;
+}
+
+.codenl-nav__wrapper nav a:hover {
+  background-color: var(--primary-highlight);
+}
+
+@media screen and (max-width: 980px) {
+  .codenl-nav__wrapper {
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    max-width: initial;
+  }
+
+  .codenl-nav__wrapper nav {
+    width: 100%;
+    text-align: center;
+    visibility: hidden;
+    height: 0;
+  }
+  
+  .codenl-nav__wrapper nav ul {
+    border-top: 2px solid var(--primary-highlight);
+    flex-direction: column;
+    display: flex;
+    width: 100%
+  }
+  
+  .codenl-nav__wrapper nav ul li {
+    width: 100%;
+  }
+  
+  .codenl-nav__wrapper nav li a {
+    padding: 1.1em 0;
+    border-bottom: 2px solid var(--primary-highlight);
+  }
+  
+  #codenl-nav__menu-toggle:checked ~ nav {
+    visibility: visible;
+    height: auto;
+  }
+  
+  .codenl-nav__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    padding: 0 5%;
+    margin: 0;
+    flex: 1 0;
+  }
+  
+  label.codenl-nav__label-toggle {
+    background: linear-gradient(
+      to bottom, 
+      black, black 20%, 
+      transparent 20%, transparent 40%, 
+      black 40%, black 60%, 
+      transparent 60%, transparent 80%, 
+      black 80%, black 100%
+    ); /* Gradient Hamburger */
+    cursor: pointer;
+    display: block;
+    height: 35px;
+    width: 35px;
+  }
+}
+
+/* Main content */
+
+main {
+  flex: 1 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: var(--page-width);
+  background-color: white;
+  padding: 2% 5%;
+}
+
+.codenl-intro {
+  text-align: center;
+}
+
+.codenl-intro h1 {
+  font-size: 2.5em;
+  line-height: 1.2em;
+}
+
+.codenl-intro span {
+  font-size: 1.7em;
+  line-height: 1.2em;
+  padding-top: 1em;
+  display: inline-block;
+}
+
+main hr {
+  border-color: var(--primary-background);
+  margin: 1em 0;
+  width: 100%;
+}
+
+main section {
+  width: 100%;
+  padding: 1em 0;
+}
+
+main section h1 {
+  padding-bottom: 0.5em;
+}
+
+.codenl-about__summary {
+  display: flex;
+}
+
+.codenl-about__mission {
+  flex: 1 1 30%;
+  font-size: 1.7em;
+  line-height: 1.2em;
+  padding-right: 1em;
+}
+
+.codenl-about__beliefs {
+  flex: 2 1 70%;
+}
+
+/* Footer */
+
+footer {
+  flex: 0 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  height: 3em;
+  background-color: var(--footer-background);
+}
+
+
+/* Components */
+
+.codenl-cards {
+  display: flex;
+  justify-content: space-around;
+  align-items: top;
+}
+
+.codenl-icon-card {
+  flex: 1 0 0px;
+  display: flex;
+  padding: 0 1em;
+}
+
+.codenl-icon-card h1 {
+  font-size: 1.2em;
+  padding-bottom: 0.5em;
+}
+
+.codenl-icon-card img {
+  flex: 0 0;
+  height: 50px;
+  width: 50px;
+}
+
+.codenl-icon-card__content {
+  text-align: left;
+  margin-left: 1em;
+}
+
+.codenl-card {
+  flex: 1 0 0px;
+  display: flex;
+  flex-direction: column;
+  padding: 0 1em;
+}
+
+.codenl-card h1 {
+  font-size: 1.2em;
+  padding-bottom: 0.5em;
+}
