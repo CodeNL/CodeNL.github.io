@@ -1,11 +1,11 @@
 @import url(https://fonts.googleapis.com/css?family=ABeeZee:400);
 
 :root {
-  --primary-background: #eeeeee;
+  --primary-background: #F3F4F7;
   --primary-highlight: #dddddd;
   --primary-foreground: black;
   --secondary-background: white;
-  --footer-background: #676767;
+  --footer-background: #bbbbbb;
   --page-width: 1080px;
 }
 
@@ -22,6 +22,14 @@ body {
   align-items: center;
   background-color: var(--primary-background);
   line-height: 1.2em;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 h1 {
@@ -192,11 +200,10 @@ main {
   flex: 1 0;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  max-width: var(--page-width);
-  background-color: white;
-  padding: 2% 5%;
+  align-items: stretch;
+  justify-content: flex-start;
+  background-color: var(--primary-background);
+  width: 100%;
 }
 
 .codenl-intro {
@@ -217,17 +224,35 @@ main {
 
 main hr {
   border-color: var(--primary-background);
-  margin: 1em 0;
+  margin: 2em 0;
   width: 100%;
 }
 
 main section {
   width: 100%;
-  padding: 1em 0;
 }
 
 main section h1 {
-  padding-bottom: 0.5em;
+  margin-bottom: 1em;
+}
+
+.codenl-main-section {
+  display: flex;
+  justify-content: center;
+}
+
+.codenl-main-section:nth-child(2n) {
+  background-color: var(--secondary-background);
+}
+
+.codenl-main-section__container {
+  max-width: var(--page-width);
+  width: 100%;
+  padding: 60px 0;
+}
+
+.codenl-about {
+  background: var(--secondary-background);
 }
 
 .codenl-about__summary {
@@ -245,6 +270,47 @@ main section h1 {
   flex: 2 1 70%;
 }
 
+.codenl-faq__question {
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.codenl-faq li {
+  margin: 30px 0;
+}
+
+.codenl-faq li:first-of-type {
+  margin-top: 0;
+}
+
+.codenl-faq li:last-of-type {
+  margin-bottom: 0;
+}
+
+.codenl-resources__intro {
+  margin-bottom: 2em 0;
+}
+
+.codenl-resources ul > li {
+  margin: 20px 0;
+}
+
+.codenl-resources ul > li:first-of-type {
+  margin-top: 0;
+}
+
+.codenl-resources ul > li:last-of-type {
+  margin-bottom: 0;
+}
+
+.codenl-resources__title {
+  margin: 10px 0;
+}
+
+.codenl-contact__intro {
+  margin: 20px 0;
+}
+
 /* Footer */
 
 footer {
@@ -252,9 +318,68 @@ footer {
   width: 100%;
   display: flex;
   justify-content: center;
-  height: 3em;
+  align-items: center;
+  height: 5em;
   background-color: var(--footer-background);
 }
+
+.codenl-footer__container {
+  max-width: var(--page-width);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.codenl-footer__social-media {
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.codenl-social-media-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  transition: all 250ms ease-out
+}
+
+.codenl-social-media-icon:hover {
+  border-radius: 3px;
+}
+
+.codenl-footer__twitter {
+  background-color: #00aced;
+}
+
+.codenl-footer__facebook {
+  background-color: #39599f;
+}
+
+.codenl-footer__email {
+  background-color: #447298;
+}
+
+.codenl-social-media-icon__symbol {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+}
+
+.codenl-footer__twitter-icon {
+  background: url(http://codenl.org/wp-content/themes/disillusion/img/social.png) no-repeat;
+}
+
+.codenl-footer__facebook-icon {
+  background: url(http://codenl.org/wp-content/themes/disillusion/img/social.png) no-repeat;
+}
+
+.codenl-footer__email-icon {
+  background: url(http://codenl.org/wp-content/themes/disillusion/img/social.png) no-repeat;
+}
+
 
 
 /* Components */
@@ -273,7 +398,6 @@ footer {
 
 .codenl-icon-card h1 {
   font-size: 1.2em;
-  padding-bottom: 0.5em;
 }
 
 .codenl-icon-card img {
@@ -296,5 +420,4 @@ footer {
 
 .codenl-card h1 {
   font-size: 1.2em;
-  padding-bottom: 0.5em;
 }
